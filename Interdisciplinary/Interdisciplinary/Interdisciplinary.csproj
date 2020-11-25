@@ -5,8 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\css\" />
-    <Folder Include="Assets\js\" />
+    <None Include="wwwroot\css\imports\_animations.scss" />
+    <None Include="wwwroot\css\imports\_content.scss" />
+    <None Include="wwwroot\css\imports\_footer.scss" />
+    <None Include="wwwroot\css\imports\_general.scss" />
+    <None Include="wwwroot\css\imports\_header.scss" />
+    <None Include="wwwroot\css\imports\_imports.scss" />
+    <None Include="wwwroot\css\imports\_responsive.scss" />
+    <None Include="wwwroot\css\imports\_variables.scss" />
+    <None Include="wwwroot\css\styles.css">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>styles.scss</DependentUpon>
+    </None>
+    <None Include="wwwroot\css\styles.scss">
+      <Generator>SassTranspiler</Generator>
+      <LastGenOutput>styles.css</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
