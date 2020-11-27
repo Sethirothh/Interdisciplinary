@@ -10,23 +10,22 @@ using Interdisciplinary.Models;
 
 namespace Interdisciplinary.Controllers
 {
-    public class FoodController : Controller
+    public class CategoryController : Controller
     {
         private readonly InterdisciplinaryContext _context;
 
-        public FoodController(InterdisciplinaryContext context)
+        public CategoryController(InterdisciplinaryContext context)
         {
             _context = context;
         }
 
-        // GET: Food
+        // GET: Category
         public async Task<IActionResult> Index()
         {
-            var interdisciplinaryContext = _context.Foods.Include(f => f.Category).Include(f => f.User);
-            return View(await interdisciplinaryContext.ToListAsync());
+            return View(await _context.Categories.ToListAsync());
         }
 
-        // GET: Food/Details/5
+        // GET: Category/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,45 +33,39 @@ namespace Interdisciplinary.Controllers
                 return NotFound();
             }
 
-            var food = await _context.Foods
-                .Include(f => f.Category)
-                .Include(f => f.User)
-                .FirstOrDefaultAsync(m => m.FoodID == id);
-            if (food == null)
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.CategoryID == id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(food);
+            return View(category);
         }
 
-        // GET: Food/Create
+        // GET: Category/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "Title");
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "FirstName");
             return View();
         }
 
-        // POST: Food/Create
+        // POST: Category/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food)
+        public async Task<IActionResult> Create([Bind("CategoryID,Title")] Category category)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(food);
+                _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
-            return View(food);
+            return View(category);
         }
 
-        // GET: Food/Edit/5
+        // GET: Category/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,24 +73,22 @@ namespace Interdisciplinary.Controllers
                 return NotFound();
             }
 
-            var food = await _context.Foods.FindAsync(id);
-            if (food == null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
-            return View(food);
+            return View(category);
         }
 
-        // POST: Food/Edit/5
+        // POST: Category/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryID,Title")] Category category)
         {
-            if (id != food.FoodID)
+            if (id != category.CategoryID)
             {
                 return NotFound();
             }
@@ -106,12 +97,12 @@ namespace Interdisciplinary.Controllers
             {
                 try
                 {
-                    _context.Update(food);
+                    _context.Update(category);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FoodExists(food.FoodID))
+                    if (!CategoryExists(category.CategoryID))
                     {
                         return NotFound();
                     }
@@ -122,12 +113,10 @@ namespace Interdisciplinary.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
-            return View(food);
+            return View(category);
         }
 
-        // GET: Food/Delete/5
+        // GET: Category/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,32 +124,30 @@ namespace Interdisciplinary.Controllers
                 return NotFound();
             }
 
-            var food = await _context.Foods
-                .Include(f => f.Category)
-                .Include(f => f.User)
-                .FirstOrDefaultAsync(m => m.FoodID == id);
-            if (food == null)
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.CategoryID == id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(food);
+            return View(category);
         }
 
-        // POST: Food/Delete/5
+        // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var food = await _context.Foods.FindAsync(id);
-            _context.Foods.Remove(food);
+            var category = await _context.Categories.FindAsync(id);
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FoodExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.Foods.Any(e => e.FoodID == id);
+            return _context.Categories.Any(e => e.CategoryID == id);
         }
     }
 }

@@ -1,5 +1,19 @@
 header {
     nav {
-        background: $colorGrey;
+        background: $colorBlack;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            margin:0;
+            padding:0;
+            li {
+                list-style: none;
+
+                a {
+                    color: $colorWhite;
+                }
+            }
+        }
     }
 }
