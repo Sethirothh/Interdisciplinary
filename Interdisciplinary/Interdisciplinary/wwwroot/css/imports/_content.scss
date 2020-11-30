@@ -7,3 +7,34 @@ body {
         color: $colorWhite;
     }
 }
+
+.page {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .header {
+
+        background: center no-repeat;
+        background-size: cover;
+        height: calc(100vh - 175px);
+        width: 100%;
+        position: relative;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+
+        .info {
+            width: calc(100% - 320px);
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+            background-color: $colorWhite;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-items: center;
+            align-content: space-evenly;
+        }
+    }
+}
