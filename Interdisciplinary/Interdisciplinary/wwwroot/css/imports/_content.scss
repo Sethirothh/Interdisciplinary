@@ -1,5 +1,5 @@
 body {
-    background-color: $colorBrown;
+    background-color: $colorGrey;
     padding: 0;
     max-width: 100%;
     margin: 0;
@@ -38,17 +38,52 @@ body {
         }
     }
 
+    .categories {
+        max-width: 1600px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 40px;
+        
+        div {
+        height: 360px;
+            &.vegetables {
+                background-color: $colorLightGreen;
+            }
+            &.fruits {
+                background-color: $colourYellow;
+            }
+        }
+    }
+
     .bottom {
-        background-image: url('/images/bundFrugt.png');
         background: center no-repeat;
         background-size: cover;
+        background-image: url('/images/bundFrugt.png');
         height: 500px;
         width: 100%;
         position: relative;
         z-index: 4;
         display: flex;
         justify-content: center;
+        align-items: center;
+        h2 {
+            color: $colorWhite;
+            font-size: 72px;
+            max-width: 800px;
+            text-align: center;
+        }
 
-        
+        &::after {
+            content:'';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($colorGreen, .8);
+            z-index: -1;
+        }
     }
 }

@@ -8820,25 +8820,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chril\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\mariagalsgaard\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Erhvervsakademi\\Webdevelopment\\Interdisiplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
       "projectName": "Interdisciplinary",
-      "projectPath": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
-      "packagesPath": "C:\\Users\\Chril\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\obj\\",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\Erhvervsakademi\\Webdevelopment\\Interdisiplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
+      "packagesPath": "C:\\Users\\mariagalsgaard\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\Erhvervsakademi\\Webdevelopment\\Interdisiplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Chril\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\mariagalsgaard\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8898,7 +8893,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
