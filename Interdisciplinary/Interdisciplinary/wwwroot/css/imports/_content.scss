@@ -1,8 +1,13 @@
-body {
+﻿body {
     background-color: $colorGrey;
     padding: 0;
     max-width: 100%;
     margin: 0;
+    * {
+        font-family:$font-fam;
+        margin: 0; 
+        padding: 0;
+    }
     a {
         color: $colorWhite;
     }
@@ -35,6 +40,21 @@ body {
             grid-template-columns: auto auto auto;
             justify-items: center;
             align-content: space-evenly;
+
+            & > div {
+                display: flex;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 10px;
+                }
+
+                img {
+                    align-self: center;
+                }
+            }
         }
     }
 
@@ -44,14 +64,83 @@ body {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 40px;
-        
+        margin: 175px auto 100px;
+
         div {
-        height: 360px;
+            height: 360px;
+            position: relative;
+            padding: 60px 70px;
+            box-sizing: border-box;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+
+            h2 {
+                font-size: 70px;
+                font-weight: 900;
+                margin: 0;
+            }
+
+            h4 {
+                font-size: 28px;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: -1;
+            }
+
+            p {
+                font-size: 24px;
+                margin-bottom: 34px;
+            }
+
+            a {
+                background-color: $colorWhite;
+                display: block;
+                padding: 16px 40px 16px 20px;
+                font-size: 16px;
+                border-radius: 25px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &::after {
+                    content: '→';
+                    color: inherit;
+                    margin-left: 10px;
+                    display: inline;
+                    position: absolute;
+                }
+            }
+
             &.vegetables {
                 background-color: $colorLightGreen;
+
+                h4 {
+                    color: $colorGreen;
+                }
+
+                a {
+                    color: $colorGreen;
+                }
             }
+
             &.fruits {
-                background-color: $colourYellow;
+                background-color: $colorYellow;
+
+                h4 {
+                    color: $colorRed;
+                }
+
+                a {
+                    color: $colorRed;
+                }
             }
         }
     }
@@ -67,6 +156,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+
         h2 {
             color: $colorWhite;
             font-size: 72px;
@@ -75,7 +165,7 @@ body {
         }
 
         &::after {
-            content:'';
+            content: '';
             display: block;
             position: absolute;
             top: 0;
