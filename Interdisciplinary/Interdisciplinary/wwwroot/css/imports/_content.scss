@@ -15,9 +15,10 @@ body {
 
     .header {
 
-        background: center no-repeat;
+        background: top no-repeat;
         background-size: cover;
-        height: calc(100vh - 175px);
+        background-image: url('/images/headerImg.png');
+        height: calc(100vh - 195px);
         width: 100%;
         position: relative;
         z-index: 4;
