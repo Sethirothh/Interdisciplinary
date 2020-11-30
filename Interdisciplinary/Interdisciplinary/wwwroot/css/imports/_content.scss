@@ -14,7 +14,6 @@ body {
     margin: 0;
 
     .header {
-
         background: top no-repeat;
         background-size: cover;
         background-image: url('/images/headerImg.png');
@@ -37,5 +36,19 @@ body {
             justify-items: center;
             align-content: space-evenly;
         }
+    }
+
+    .bottom {
+        background-image: url('/images/bundFrugt.png');
+        background: center no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+        position: relative;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+
+        
     }
 }
