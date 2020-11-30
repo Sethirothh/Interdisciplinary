@@ -8,7 +8,13 @@
 </head>
 <body>
     <header>
+        <div class="textHook">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
         <nav>
+            <div class="logo">
+                <img src="images/carrot.svg" alt="">
+            </div>
             <ul>
                 <li>
                     <a asp-controller="Home" asp-action="Index">Hjem</a>
@@ -23,6 +29,10 @@
                     <a asp-controller="Food" asp-action="Index">Fødevarer</a>
                 </li>
             </ul>
+            <div class="navIcons">
+                <img src="images/loupe.svg" alt="">
+                <img src="images/shopping-basket.svg" alt="">
+            </div>
         </nav>
     </header>
     <div class="container">
@@ -31,7 +41,44 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer>
+        <div class="footerLogo">
+            <img src="images/carrot.svg" alt="">
+        </div>
+        <div class="footerAddress">
+            <h3>Contact</h3>
+            <p>Name A/S</p>
+            <p>ErhvervsAkademi Aarhus</p>
+            <p>8000 Aarhus</p>
+            <div class="flex">
+                <p>E-mail:</p>
+                <a href="mailto:sayhello@name.com">sayhello@name.com</a>
+            </div>
+            <div class="flex">
+                <p>Tlf:</p>
+                <a href="tel:12345678">12345678</a>
+            </div>
+        </div>
+        <div class="footerMenu">
+            <h3>Menu</h3>
+            <ul>
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Hjem</a>
+                </li>
+                <li>
+                    <a asp-controller="User" asp-action="Index">Producenter</a>
+                </li>
+                <li>
+                    <a asp-controller="Category" asp-action="Index">Kategorier</a>
+                </li>
+                <li>
+                    <a asp-controller="Food" asp-action="Index">Fødevarer</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footerPrice">
+            <img src="images/boersen-gazelle-2017.png" alt="">
+        </div>
     </footer>
     <script src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)

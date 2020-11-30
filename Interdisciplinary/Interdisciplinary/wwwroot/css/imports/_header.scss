@@ -1,18 +1,72 @@
 header {
+    .textHook {
+        background-color: #274b3c;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            /*@include fontStyle(14px, white, 0, 21px);*/
+            font-size: 14px; 
+            color: white; 
+            line-height: 21px; 
+        }
+    }
+
     nav {
-        background: $colorBlack;
+        display: grid;
+        grid-template-columns: 100px auto 100px;
+        justify-items: center;
+        align-content: space-evenly;
+        background-color: #315f4b;
+        height: 80px;
 
         ul {
-            display: flex;
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(4, 120px);
             justify-content: center;
-            margin:0;
-            padding:0;
-            li {
-                list-style: none;
+            justify-items: center;
 
+            li {
                 a {
-                    color: $colorWhite;
+                    /*@include fontStyle(16px, white, bold, 27px);*/
+                    color: white; 
+                    font-size: 16px; 
+                    font-weight: bold;
+                    line-height: 27px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    position: relative;
+                    transition: 0.2s;
+
+                    &:hover {
+                        color: #7e9764;
+                    }
                 }
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 40px;
+                height: auto;
+            }
+        }
+
+        .navIcons {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 22px;
+                height: auto;
+                padding-right: 15px;
+                cursor: pointer;
             }
         }
     }

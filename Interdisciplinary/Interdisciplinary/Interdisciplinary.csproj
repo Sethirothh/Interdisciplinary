@@ -13,11 +13,6 @@
     <None Include="wwwroot\css\imports\_imports.scss" />
     <None Include="wwwroot\css\imports\_responsive.scss" />
     <None Include="wwwroot\css\imports\_variables.scss" />
-    <None Include="wwwroot\css\styles.css">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>styles.scss</DependentUpon>
-    </None>
     <None Include="wwwroot\css\styles.scss">
       <Generator>SassTranspiler</Generator>
       <LastGenOutput>styles.css</LastGenOutput>
@@ -32,6 +27,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
