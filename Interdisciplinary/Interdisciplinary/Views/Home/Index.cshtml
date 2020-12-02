@@ -32,17 +32,10 @@
         </div>
     </section>
     <section class="food-section">
-        <table>
-            <tbody>
                 @foreach (Food food in Model)
                 {
-                    <div>
-                        @Html.PartialAsync("_ProductFood", food)
-                    </div>
+                         @await Html.PartialAsync("_ProductFood", food)
                 }
-            </tbody>
-        </table>
-
     </section>
     <section class="categories">
         <div class="vegetables">

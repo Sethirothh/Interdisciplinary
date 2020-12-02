@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Interdisciplinary.Models;
+using Interdisciplinary.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Interdisciplinary.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly InterdisciplinaryContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(InterdisciplinaryContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            var interdisciplinaryContext = _context.Foods.Include(f => f.Category).Include(f => f.User);
+            return View(await interdisciplinaryContext.ToListAsync());
         }
 
 
