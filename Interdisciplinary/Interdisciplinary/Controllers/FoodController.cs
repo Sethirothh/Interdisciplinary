@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Interdisciplinary.Data;
 using Interdisciplinary.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace Interdisciplinary.Controllers
 {
@@ -62,6 +65,35 @@ namespace Interdisciplinary.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food, IFormFile files)
         {
+            if (files != null)
+            {
+                if (files.Length > 0)
+                {
+                    //Getting FileName
+                    var fileName = Path.GetFileName(files.FileName);
+                    
+            food.Picture = fileName;
+                    //Assigning Unique Filename (Guid)
+                    var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+
+                    //Getting file Extension
+                    var fileExtension = Path.GetExtension(fileName);
+
+                    // concatenating  FileName + FileExtension
+                    var newFileName = String.Concat(myUniqueFileName, fileExtension);
+
+                    // Combines two strings into a path.
+                    var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images")).Root + $@"\{newFileName}";
+
+                    using (FileStream fs = System.IO.File.Create(filepath))
+                    {
+                        files.CopyTo(fs);
+                        fs.Flush();
+                    }
+
+                    food.Picture = fileName;
+                }
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(food);

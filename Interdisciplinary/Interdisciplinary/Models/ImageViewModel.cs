@@ -7,5 +7,6 @@ namespace Interdisciplinary.Models
 {
     public class ImageViewModel
     {
+
     }
 }
