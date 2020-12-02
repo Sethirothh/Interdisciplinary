@@ -1,4 +1,7 @@
-﻿@{
+﻿@model IEnumerable<Interdisciplinary.Models.Food>
+
+@{
+
     ViewData["Title"] = "Home Page";
 }
 
@@ -28,7 +31,19 @@
             </div>
         </div>
     </section>
+    <section class="food-section">
+        <table>
+            <tbody>
+                @foreach (Food food in Model)
+                {
+                    <div>
+                        @Html.PartialAsync("_ProductFood", food)
+                    </div>
+                }
+            </tbody>
+        </table>
 
+    </section>
     <section class="categories">
         <div class="vegetables">
             <h4>VEGETABLE</h4>
@@ -50,6 +65,6 @@
 
     <section class="bottom">
         <h2>Organic fresh fruit & vegetables for your health</h2>
-        
+
     </section>
 </div>

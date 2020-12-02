@@ -3,7 +3,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-items: center;
-    padding: 40px 0;
+    padding: 40px 0 !important;
 
     .footerAddress {
         h3 {
