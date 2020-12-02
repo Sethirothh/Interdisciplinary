@@ -63,38 +63,39 @@ namespace Interdisciplinary.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food, IFormFile files)
+        public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food, List<IFormFile> files)
         {
             if (files != null)
             {
-                if (files.Length > 0)
+                foreach (var file in files)
                 {
-                    //Getting FileName
-                    var fileName = Path.GetFileName(files.FileName);
-                    
-            food.Picture = fileName;
-                    //Assigning Unique Filename (Guid)
-                    var myUniqueFileName = Convert.ToString(Guid.NewGuid());
-
-                    //Getting file Extension
-                    var fileExtension = Path.GetExtension(fileName);
-
-                    // concatenating  FileName + FileExtension
-                    var newFileName = String.Concat(myUniqueFileName, fileExtension);
-
-                    // Combines two strings into a path.
-                    var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images")).Root + $@"\{newFileName}";
-
-                    using (FileStream fs = System.IO.File.Create(filepath))
+                    if (file.Length > 0)
                     {
-                        files.CopyTo(fs);
-                        fs.Flush();
-                    }
+                        //Getting FileName
+                        var fileName = Path.GetFileName(file.FileName);
 
-                    food.Picture = fileName;
+                        //Assigning Unique Filename (Guid)
+                        var myUniqueFileName = fileName;
+
+                        //Getting file Extension
+                        var fileExtension = Path.GetExtension(fileName);
+
+                        // concatenating  FileName + FileExtension
+                        var newFileName = String.Concat(myUniqueFileName, fileExtension);
+
+                        // Combines two strings into a path.
+                        var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images")).Root + $@"\{fileName}";
+                        using (FileStream fs = System.IO.File.Create(filepath))
+                        {
+                            file.CopyTo(fs);
+                            fs.Flush();
+                        }
+                        food.Picture = fileName;
+
+                    }
                 }
             }
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
             {
                 _context.Add(food);
                 await _context.SaveChangesAsync();
