@@ -8820,25 +8820,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chril\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\asger\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
+      "projectUniqueName": "C:\\Users\\asger\\OneDrive\\Skrivebord\\Web Development\\Interdiscplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
       "projectName": "Interdisciplinary",
-      "projectPath": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
-      "packagesPath": "C:\\Users\\Chril\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chril\\Desktop\\Skole\\Projekter\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\obj\\",
+      "projectPath": "C:\\Users\\asger\\OneDrive\\Skrivebord\\Web Development\\Interdiscplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary.csproj",
+      "packagesPath": "C:\\Users\\asger\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asger\\OneDrive\\Skrivebord\\Web Development\\Interdiscplinary\\Interdisciplinary\\Interdisciplinary\\Interdisciplinary\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Chril\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\asger\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

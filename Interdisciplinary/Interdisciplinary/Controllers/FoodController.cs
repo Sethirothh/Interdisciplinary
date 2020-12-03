@@ -92,16 +92,35 @@ namespace Interdisciplinary.Controllers
                         }
                         food.Picture = fileName;
 
-                    }
+                    } 
                 }
             }
+
+            if (string.IsNullOrEmpty(food.Title))
+            {
+                ModelState.AddModelError("Title", "Please enter a title");
+            } 
+            if (string.IsNullOrEmpty(food.Content))
+            {
+                ModelState.AddModelError("Content", "Please write something about your product");
+            }
+            if (string.IsNullOrEmpty(food.Picture))
+            {
+                ModelState.AddModelError("Picture", "Please insert a picture");
+            }
+            if (string.IsNullOrEmpty(food.Location))
+            {
+                ModelState.AddModelError("Location", "Please enter your location");
+            }
+
+
 
                 if (ModelState.IsValid)
             {
                 _context.Add(food);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            } 
             ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
             ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
             return View(food);
