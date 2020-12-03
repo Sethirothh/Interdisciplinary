@@ -1,12 +1,14 @@
 ﻿@model Interdisciplinary.Models.Food
 
-<div>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>   
-    </dl>
+<div class="product" data-category="@Html.DisplayFor(model => model.CategoryID)">
+    <div class="image">
+        <img src="~/uploaded-images/@Html.DisplayFor(model => model.Picture)" alt="Alternate Text" />
+    </div>
+    <h5>
+        @Html.DisplayFor(model => model.Title)
+
+    </h5>
+    <p>
+        @Html.DisplayFor(model => model.Price) DKK / stk. 
+    </p>
 </div>

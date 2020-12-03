@@ -31,12 +31,6 @@
             </div>
         </div>
     </section>
-    <section class="food-section">
-                @foreach (Food food in Model)
-                {
-                         @await Html.PartialAsync("_ProductFood", food)
-                }
-    </section>
     <section class="categories">
         <div class="vegetables">
             <h4>VEGETABLE</h4>
@@ -54,6 +48,23 @@
             <img src="~/images/jordbær.png" />
         </div>
 
+    </section>
+    <section class="food-section">
+        <div class="deal">
+            <h2>Deals of the week</h2>
+            <div class="cat-controller">
+                <p class="controller id-0 active" onclick="toggleParentClass(0)" >All Products</p>
+                <p class="controller id-1" onclick="toggleParentClass(1)">Vegetables</p>
+                <p class="controller id-2" onclick="toggleParentClass(2)">Fruits</p>
+            </div>
+        </div>
+        <div class="product-grid">
+            @foreach (Food food in Model)
+            {
+                @await Html.PartialAsync("_ProductFood", food)
+            }
+
+        </div>
     </section>
 
     <section class="bottom">

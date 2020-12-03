@@ -12,9 +12,6 @@ body {
         padding: 0;
     }
 
-    a {
-        color: $colorWhite;
-    }
 }
 
 .page {
@@ -34,7 +31,8 @@ body {
         justify-content: center;
 
         .info {
-            width: calc(100% - 320px);
+            width: 100%;
+            max-width: 1400px;
             height: 150px;
             position: absolute;
             bottom: 0;
@@ -63,7 +61,7 @@ body {
     }
 
     .categories {
-        max-width: 1600px;
+        max-width: 1400px;
         width: 100%;
         display: grid;
         grid-template-columns: auto auto;
@@ -260,7 +258,98 @@ body {
         
     }
 }
+.food-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 105px;
 
+    &.id-1 {
+        .product-grid .product.id-2 {
+            display: none !important;
+        }
+    }
+
+    &.id-2 {
+
+        .product-grid .product.id-1 {
+            display: none;
+        }
+    }
+
+    .deal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        flex-direction: column;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 55px;
+            font-weight: 900;
+        }
+
+        .cat-controller {
+            display: flex;
+            justify-content: center;
+
+            .controller {
+                font-size: 16px;
+                text-transform: uppercase;
+                padding: 6px 12px;
+                color: $colorGreen;
+                border-radius: 20px;
+                &.active {
+                    color: $colorWhite;
+                    background-color: $colorGreen;
+                }
+            }
+        }
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+        grid-auto-rows: repeat(2, 300px);
+        grid-gap: 20px;
+
+        .product {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            background-color: white;
+
+            &:nth-of-type(n+11) {
+                display: none;
+            }
+
+            .image {
+                height: 170px;
+                margin-bottom: 20px;
+
+                img {
+                    max-height: 170px;
+                }
+            }
+
+            h5 {
+                text-transform: uppercase;
+                font-size: 16px;
+                color: $colorGreen;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 13px;
+                opacity: .6;
+            }
+        }
+    }
+}
 .form-wrapper {
     width: 100%;
     max-width: 1400px;
