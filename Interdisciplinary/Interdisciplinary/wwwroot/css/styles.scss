@@ -267,25 +267,64 @@ body {
     padding: 80px;
     box-sizing: border-box;
     margin: 0 auto;
+
     .form {
         margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+
+        .form-wrap {
+            width: 50%;
+            padding: 40px;
+            box-sizing: border-box;
+            h2 {
+                display: block;
+                margin: 0 auto 20px;
+
+            }
+            hr {
+                margin: 0 auto 20px;
+                opacity:.5;
+
+            }
+        }
+
+        .create-image {
+            background: center no-repeat;
+            background-size: cover;
+            background-image: url('/images/create-image.png');
+            width: 50%;
+        }
+
         form {
             .form-group {
-                width: 400px;
                 padding: 8px 0;
-                position:relative;
+                position: relative;
                 display: flex;
                 justify-content: space-between;
                 margin: 0 auto;
-                input {
+                &.price {
+                    &::after {
+                        content: 'DKK';
+                        display: block;
+                        position: absolute;
+                        right:10px;
+                        top: 15px;
+
+                    }
+                }
+                input, select {
                     padding: 8px;
                     outline: 0;
                     width: 60%;
                     border: 1px solid $colorBlack;
                 }
+
                 .text-danger {
-                    display:none;
+                    display: none;
                 }
+
                 .btn {
                     @include btn;
                     width: 100%;

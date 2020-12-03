@@ -84,7 +84,7 @@ namespace Interdisciplinary.Controllers
                         var newFileName = String.Concat(myUniqueFileName, fileExtension);
 
                         // Combines two strings into a path.
-                        var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images")).Root + $@"\{fileName}";
+                        var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploaded-images")).Root + $@"\{fileName}";
                         using (FileStream fs = System.IO.File.Create(filepath))
                         {
                             file.CopyTo(fs);
@@ -95,6 +95,7 @@ namespace Interdisciplinary.Controllers
                     }
                 }
             }
+
                 if (ModelState.IsValid)
             {
                 _context.Add(food);
