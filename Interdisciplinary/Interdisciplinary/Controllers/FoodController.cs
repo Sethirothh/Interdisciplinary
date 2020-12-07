@@ -103,8 +103,8 @@ namespace Interdisciplinary.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             } 
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "Title", food.CategoryID);
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "FirstName", food.UserID);
             return View(food);
         }
 
@@ -121,8 +121,8 @@ namespace Interdisciplinary.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "Title", food.CategoryID);
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "FirstName", food.UserID);
             return View(food);
         }
 
@@ -158,8 +158,8 @@ namespace Interdisciplinary.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
-            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "Title", food.CategoryID);
+            ViewData["UserID"] = new SelectList(_context.Users, "UserID", "FirstName", food.UserID);
             return View(food);
         }
 
