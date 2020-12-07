@@ -410,9 +410,6 @@ body {
                     border: 1px solid $colorBlack;
                 }
 
-                .text-danger {
-                    display: none;
-                }
 
                 .btn {
                     @include btn;
