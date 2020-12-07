@@ -575,4 +575,8 @@ C:\Users\asger\OneDrive\Skrivebord\Web Development\Interdiscplinary\Interdiscipl
 C:\Users\asger\OneDrive\Skrivebord\Web Development\Interdiscplinary\Interdisciplinary\Interdisciplinary\Interdisciplinary\obj\Debug\netcoreapp3.1\Interdisciplinary.genruntimeconfig.cache
 C:\Users\Chril\Desktop\Skole\Projekter\Interdisciplinary\Interdisciplinary\Interdisciplinary\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Chril\Desktop\Skole\Projekter\Interdisciplinary\Interdisciplinary\Interdisciplinary\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductFood.cshtml.g.cs
+<<<<<<< HEAD
 \\Mac\Home\Desktop\Erhvervsakademi\Webdevelopment\Interdisiplinary\Interdisciplinary\Interdisciplinary\Interdisciplinary\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductFood.cshtml.g.cs
+=======
+C:\Users\asger\OneDrive\Skrivebord\Web Development\Interdiscplinary\Interdisciplinary\Interdisciplinary\Interdisciplinary\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductFood.cshtml.g.cs
+>>>>>>> Modelvalidation

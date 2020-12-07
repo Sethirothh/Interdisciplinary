@@ -96,12 +96,13 @@ namespace Interdisciplinary.Controllers
                 }
             }
 
-                if (ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
                 _context.Add(food);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            } 
             ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryID", "CategoryID", food.CategoryID);
             ViewData["UserID"] = new SelectList(_context.Users, "UserID", "UserID", food.UserID);
             return View(food);
