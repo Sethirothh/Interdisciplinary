@@ -413,15 +413,20 @@ body {
                     border: 1px solid $colorBlack;
                 }
 
-<<<<<<< HEAD
-=======
                 .text-danger {
-                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    font-size: 13px;
+                    color: red;
+                    text-align: right;
+                    transform: translateY(80%);
+                    min-height: 40px;
                 }
-        
->>>>>>> Modelvalidation
 
-                    
+
+
                 .btn {
                     @include btn;
                     width: 100%;
