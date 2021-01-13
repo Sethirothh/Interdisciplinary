@@ -20,8 +20,6 @@ namespace Interdisciplinary.Models
         [Required]
         public string Content { get; set; }
 
-        [Required(ErrorMessage = "Please select file")]
-        [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$", ErrorMessage = "Only Image files allowed.")] 
         public string Picture { get; set; }
 
         [Range(1, 100, ErrorMessage = "The field price must be a number and it must be between 1 and 100")]

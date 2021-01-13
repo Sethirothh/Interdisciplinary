@@ -63,8 +63,10 @@ namespace Interdisciplinary.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Picture,Price,Location,CategoryID,UserID")] Food food, List<IFormFile> files)
+        public async Task<IActionResult> Create([Bind("FoodID,Title,Content,Price,Location,CategoryID,UserID")] Food food, List<IFormFile> files)
         {
+
+
             if (files != null)
             {
                 foreach (var file in files)
@@ -72,7 +74,7 @@ namespace Interdisciplinary.Controllers
                     if (file.Length > 0)
                     {
                         //Getting FileName
-                        var fileName = Path.GetFileName(file.FileName);
+                        string fileName = Path.GetFileName(file.FileName);
 
                         //Assigning Unique Filename (Guid)
                         var myUniqueFileName = fileName;
@@ -93,12 +95,19 @@ namespace Interdisciplinary.Controllers
                         food.Picture = fileName;
 
                     }
+                  
                 }
+            }
+
+            if (files.Count == 0)
+            {
+                ModelState.AddModelError("Picture", "Picture is required");
             }
 
 
             if (ModelState.IsValid)
             {
+
                 _context.Add(food);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
